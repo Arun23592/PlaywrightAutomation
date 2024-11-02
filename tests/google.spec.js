@@ -8,4 +8,6 @@ test("Verify application title", async ({ page }) => {
   console.log("Title is " + title);
 
   await expect(page).toHaveTitle("Google");
+
+  await page.getByPlaceholder("Playwright automation");
 });
