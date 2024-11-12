@@ -7,9 +7,13 @@ test("Valid Login", async function ({ page }) {
 
   await page.getByPlaceholder("Username").fill("Admin");
 
-  await page.locator("input[name='password']").fill("Admin123");
+  await page.locator("input[name='password']").fill("admin123");
 
   await page.locator("//button[@type=submit]").click();
 
   await expect(page).toHaveURL(/dashboard/);
+
+  await expect(page).toHaveURL(/dashboard/);
+
+  
 });
