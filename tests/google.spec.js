@@ -9,5 +9,5 @@ test("Verify application title", async ({ page }) => {
 
   await expect(page).toHaveTitle("Google");
 
-  await page.getByPlaceholder("Playwright automation");
+  await page.getByPlaceholder("");
 });
