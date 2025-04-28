@@ -17,4 +17,10 @@ test('get started link', async ({ page }) => {
   await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
 
   await page.screenshot({ path: 'example.png'});
+
+  const getStarted = page.getByRole('link', {name: 'Get started'});
+
+  await getStarted.click();
+
+  
 });
