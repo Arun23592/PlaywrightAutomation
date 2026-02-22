@@ -17,3 +17,22 @@ test("Valid Login", async function ({ page }) {
 
   
 });
+
+test.only("Login using API and reuse token", async function({request, page}){
+
+  const resp = await request.post("/auth/login", {
+    data: {username: "admin", password: "Test@123"}
+  })
+
+  const json = await resp.json();
+  const token = json.token;
+
+
+  await page.addInitScript((token) => {
+    localStorage.setItem("token", token);
+  }, token);
+
+
+  await page.goto("https://example.com/dashboard");
+  await page.expect(page).toHaveURL(/dashboard/);
+});
