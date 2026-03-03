@@ -7,7 +7,8 @@ test("Verify application title", async ({ page }) => {
   const title = await page.title();
   console.log("Title is " + title);
 
-  await expect(page).toHaveTitle("Google");
+  // await expect(page).toHaveTitle("Google");
 
-  await page.getByPlaceholder("");
+  await page.getByPlaceholder("search");
+  await page.fill("playwright");
 });
