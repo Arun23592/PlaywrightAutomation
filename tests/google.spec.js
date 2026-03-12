@@ -7,8 +7,6 @@ test("Verify application title", async ({ page }) => {
   const title = await page.title();
   console.log("Title is " + title);
 
-
-
   await page.getByPlaceholder("search").fill("playwright");
 
 });
